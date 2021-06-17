@@ -28,7 +28,15 @@ function Buttons(props) {
       {operatorButtons}
       {numberButtons}
       <button id="clear-button" key="clear-button" onClick={() => {props.clearData()}}>AC</button>
-      <button id="equals-button" key="equals-button">=</button>
+      <button id="equals-button" key="equals-button" onClick={
+        (answer) => {
+          console.log('hit');
+          props.evaluateAnswer(eval(props.displayData));
+          console.log(props);
+        }
+    }>
+      =
+      </button>
     </div>
   );
 }
